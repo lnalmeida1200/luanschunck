@@ -53,22 +53,37 @@
 		text-decoration: none;
 	}
 </style>
+<script>
+    !function(f,b,e,v,n,t,s) {
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_ID_DE_PIXEL_AQUI');
+    fbq('track', 'PageView');
+  </script>
 </head>
 <body>
 	<div class="container">
 		<img src="botao verificação.png" alt="Imagem" class="centered-image">
 		<p class="centered-text">Clique no botão abaixo para iniciar seu atendimento via WhatsApp.</p>
-		<a href="https://api.whatsapp.com/send?phone=556298104923&text=Iniciar%20atendimento" class="button">Iniciar</a>
-	</div>
+		
+          <!-- Exemplo de botão do WhatsApp -->
+        <a href="https://api.whatsapp.com/send?phone=556298104923&text=Iniciar%20atendimento" onclick="trackCadastro()" class="button">Iniciar</a>
+        <script>
+            function trackCadastro() {
+              // Rastreia o evento de clique no botão do WhatsApp
+              fbq('track', 'CompleteRegistration');
+            }
+          </script>
+
+    </div>
 
     <div class="footer">
         Feito com ❤️ | <a href="políticasdeprivacidade.html">Políticas de Privacidade</a> | <a href="termosdeuso.html">Termos de Uso</a>
     </div>
 </body>
 </html>
-
-
-
-
-
-    

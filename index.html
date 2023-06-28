@@ -3,22 +3,17 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Atendimento via WhatsApp</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<style>
 		body {
-			background-color: #f5f5f5;
+			background-color: #ffffff;
 			margin: 0;
 			padding: 0;
 			font-family: Arial, sans-serif;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			min-height: 100vh;
 		}
 
 		.container {
 			text-align: center;
+			padding-top: 50px;
 		}
 
 		.centered-image {
@@ -28,42 +23,28 @@
 			height: auto;
 		}
 
-		.centered-text {
-			margin-top: 20px;
-			font-size: 18px;
-			color: #555555;
-		}
-
 		.button {
 			display: inline-block;
 			margin-top: 20px;
-			padding: 15px 40px;
+			padding: 10px 20px;
 			background-color: #4CAF50;
 			color: #ffffff;
-			font-size: 20px;
-			border-radius: 50px;
+			font-size: 16px;
+			border-radius: 5px;
 			text-decoration: none;
 			transition: background-color 0.3s ease;
-			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 		}
 
 		.button:hover {
 			background-color: #45a049;
 		}
 
-		.button:active {
-			transform: scale(0.95);
-		}
-
-		.button i {
-			margin-right: 10px;
-		}
-
 		.footer {
+			text-align: center;
 			margin-top: 50px;
 			font-size: 14px;
-			color: #555555;
-			text-align: center;
+			border-top: 1px solid #ccc;
+			padding-top: 20px;
 		}
 
 		.footer a {
@@ -87,21 +68,22 @@
 </head>
 <body>
 	<div class="container">
-		<div>
-			<p class="centered-text">Clique no <strong>botão abaixo</strong> para iniciar seu atendimento <strong>via WhatsApp.</strong></p>
-			<a href="https://api.whatsapp.com/send?phone=556298104923&text=Ol%C3%A1%20Lucca%20Fiorinni,%20quero%20acesso%20ao%20meu%20grupo%20V3" onclick="trackCadastro()" class="button"><i class="fas fa-phone"></i>Iniciar</a>
-		</div>
+		<p class="centered-text">Clique no <strong>botão abaixo</strong> para iniciar seu atendimento <strong>via WhatsApp.</strong></p>
+		
+		<!-- Exemplo de botão do WhatsApp -->
+		<a href="https://api.whatsapp.com/send?phone=556298104923&text=Ol%C3%A1%20Lucca%20Fiorinni,%20quero%20acesso%20ao%20meu%20grupo%20V3" onclick="trackCadastro()" class="button">Iniciar</a>
+		<script>
+			function trackCadastro() {
+				// Rastreia o evento de clique no botão do WhatsApp
+				fbq('track', 'CompleteRegistration');
+			}
+		</script>
 	</div>
 
 	<div class="footer">
-		Feito com ❤️ | <a href="políticasdeprivacidade.html">Políticas de Privacidade</a> | <a href="termosdeuso.html">Termos de Uso</a>
+		<hr>
+		<p>Feito com ❤️ | <a href="políticasdeprivacidade.html">Políticas de Privacidade</a> | <a href="termosdeuso.html">Termos de Uso</a></p>
 	</div>
-
-	<script>
-		function trackCadastro() {
-			// Rastreia o evento de clique no botão do WhatsApp
-			fbq('track', 'CompleteRegistration');
-		}
-	</script>
 </body>
+
 </html>

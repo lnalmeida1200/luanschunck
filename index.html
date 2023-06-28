@@ -5,15 +5,19 @@
 	<title>Atendimento via WhatsApp</title>
 	<style>
 		body {
-			background-color: #ffffff;
+			background-color: #f5f5f5;
 			margin: 0;
 			padding: 0;
 			font-family: Arial, sans-serif;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
 		}
 
 		.container {
 			text-align: center;
-			padding-top: 50px;
 		}
 
 		.centered-image {
@@ -24,41 +28,37 @@
 		}
 
 		.centered-text {
-			text-align: center;
 			margin-top: 20px;
 			font-size: 18px;
+			color: #555555;
 		}
 
 		.button {
 			display: inline-block;
 			margin-top: 20px;
-			padding: 10px 20px;
+			padding: 15px 40px;
 			background-color: #4CAF50;
 			color: #ffffff;
-			font-size: 16px;
-			border-radius: 5px;
+			font-size: 20px;
+			border-radius: 50px;
 			text-decoration: none;
-			animation: pulse 1.5s infinite;
+			transition: background-color 0.3s ease;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 		}
 
-		@keyframes pulse {
-			0% {
-				transform: scale(1);
-			}
+		.button:hover {
+			background-color: #45a049;
+		}
 
-			50% {
-				transform: scale(1.2);
-			}
-
-			100% {
-				transform: scale(1);
-			}
+		.button:active {
+			transform: scale(0.95);
 		}
 
 		.footer {
-			text-align: center;
 			margin-top: 50px;
 			font-size: 14px;
+			color: #555555;
+			text-align: center;
 		}
 
 		.footer a {
@@ -82,20 +82,23 @@
 </head>
 <body>
 	<div class="container">
-		<p class="centered-text">Clique no <strong>botão abaixo</strong> para iniciar seu atendimento <strong>via WhatsApp.</strong></p>
+		<div>
+			<p class="centered-text">Clique no <strong>botão abaixo</strong> para iniciar seu atendimento <strong>via WhatsApp.</strong></p>
 		
-		<!-- Exemplo de botão do WhatsApp -->
-		<a href="https://api.whatsapp.com/send?phone=556298104923&text=Ol%C3%A1%20Lucca%20Fiorinni,%20quero%20acesso%20ao%20meu%20grupo%20V3" onclick="trackCadastro()" class="button">Iniciar</a>
-		<script>
-			function trackCadastro() {
-				// Rastreia o evento de clique no botão do WhatsApp
-				fbq('track', 'CompleteRegistration');
-			}
-		</script>
+			<!-- Exemplo de botão do WhatsApp -->
+			<a href="https://api.whatsapp.com/send?phone=556298104923&text=Ol%C3%A1%20Lucca%20Fiorinni,%20quero%20acesso%20ao%20meu%20grupo%20V3" onclick="trackCadastro()" class="button">Iniciar</a>
+		</div>
 	</div>
 
 	<div class="footer">
 		Feito com ❤️ | <a href="políticasdeprivacidade.html">Políticas de Privacidade</a> | <a href="termosdeuso.html">Termos de Uso</a>
 	</div>
+
+	<script>
+		function trackCadastro() {
+			// Rastreia o evento de clique no botão do WhatsApp
+			fbq('track', 'CompleteRegistration');
+		}
+	</script>
 </body>
 </html>
